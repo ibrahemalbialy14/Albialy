@@ -84,6 +84,7 @@ html {
     width: 204px;
     background-repeat: no-repeat;
     position: absolute;
+    z-index: -1;
 }
 
 .dots-up {
@@ -96,6 +97,14 @@ html {
 
     bottom: 200px;
     left: 0;
+}
+
+@media (max-width: 991px)  {
+
+    .dots {
+
+        display: none;
+    }
 }
 
 .spikes {
@@ -120,6 +129,28 @@ html {
 body {
 
     font-family: "cairo", sans-serif;
+    overflow-x: hidden;
+}
+
+body .go-up {
+    position: fixed;
+    bottom: 15px;
+    right: 7px;
+    color: var(--main-color);
+    width: 50px;
+    height: 50px;
+    z-index: 5;
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+
+body .go-up:hover i {
+
+    animation: bouncing 1.5s infinite;
+}
+
+body .go-up:hover {
+    color: rgb(0, 135, 203);
 }
 
 a {
@@ -148,7 +179,7 @@ ul {
 
 }
 
-@media (min-width: 992px) {
+@media (min-width: 991px) {
     .container {
 
         width: 970px;
@@ -289,7 +320,7 @@ ul {
 
 }
 
-@media (max-width : 7567) {
+@media (max-width : 767px) {
 
     .header .logo {
 
@@ -304,7 +335,7 @@ ul {
 }
 
 
-@media (max-width : 7567) {
+@media (max-width : 767px) {
 
     .header .main-nav {
 
@@ -333,7 +364,7 @@ ul {
     transition: var(--main-transition);
 }
 
-@media (max-width : 7567) {
+@media (max-width : 767px) {
 
     .header .main-nav>li>a {
 
@@ -463,14 +494,12 @@ ul {
     .landing .text p {
 
         font-size: 18px;
-
     }
 }
 
 @media (max-width: 991px) {
 
     .landing .text p {
-
         margin: 10px auto;
     }
 }
@@ -1053,6 +1082,7 @@ align-items: center;
     transition: var(--main-transition);
     counter-increment: services;
     position: relative;
+    border-radius: 0 0 20px 20px;
 }
 
 .services .container .box::before {
@@ -1126,6 +1156,7 @@ align-items: center;
     justify-content: center;
     align-items: center;
     padding-right: 15px;
+    border-radius: 0 0 0 20px;
 }
 
 .services .box .info::after {
@@ -1349,6 +1380,7 @@ position: relative;
     border: 1px solid #d4d4d4;
     border-radius: 6px;
     width: 75px;
+    background-color: white;
     text-align: center;
     transition: var(--main-transition);
 }
@@ -1357,6 +1389,7 @@ position: relative;
 
     display: block;
     transition: var(--main-transition);
+    background-color: white;
 }
 
 .events .info .time .unit span:first-child {
