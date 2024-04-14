@@ -13,6 +13,11 @@
     --section-background: #ececec;
 }
 
+body, html {
+
+    overflow-x: hidden; /* تجنب السحب الأفقي على الهواتف */
+}
+
 html {
 
     scroll-behavior: smooth;
@@ -572,10 +577,14 @@ ul {
 }
 
 .articles .box img {
-
-    max-width: 100%;
-    height: 190px;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0; 
+    border: none;
+    display: block; 
 }
+
 
 .articles .box:hover .info i {
 
@@ -760,7 +769,7 @@ ul {
     left: 0;
     top: 0;
     width: 100%;
-    height: 98%;
+    height: 98.9%;
 }
 
 .features .box .img-holder::after {
@@ -768,10 +777,12 @@ ul {
     content: "";
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 3px;
+    background-color: transparent;
+    z-index: 3;
     border-style: solid;
     border-width: 0px 0px 100px 500px;
-    border-color: transparent transparent white transparent;
+    border-color: transparent transparent #ffffff transparent;
 }
 
 .features .box:hover .img-holder::after {
@@ -790,7 +801,7 @@ ul {
 
 .features .container .box .img-holder img {
 
-    max-width: 100%;
+    width: 100%;
 
 }
 
